@@ -1,8 +1,12 @@
 package com.nic;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class ChatBot
 {
-private String userResponse;
+	private String userResponse;
 
 	public static void main(String[] args) throws IOException
 	{
