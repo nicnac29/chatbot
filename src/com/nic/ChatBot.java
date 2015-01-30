@@ -16,12 +16,12 @@ public class ChatBot
 
 	public void letsChat() throws IOException
 	{
-
 		do
 		{
 			listenForSomeoneToSaySomethingToMe();
 			saySomethingBack();
-		} while (true);
+		} while (!"bye".equals(userResponse));
+		System.out.println("adios muchachos");
 	}
 
 	private void listenForSomeoneToSaySomethingToMe() throws IOException
@@ -33,7 +33,15 @@ public class ChatBot
 
 	private void saySomethingBack()
 	{
-		System.out.println("sup");
-		System.out.println("you just said: " + userResponse);
+		if (userResponse.contains("how are you"))
+		{
+			System.out.println("I am good how bout you");
+		}
+		
+		if(userResponse.contains("school sucks"))
+		{
+			System.out.println("i know right");
+		}
+		
 	}
 }
