@@ -26,22 +26,42 @@ public class ChatBot
 
 	private void listenForSomeoneToSaySomethingToMe() throws IOException
 	{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br;
+		br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Say something to the chatbot:");
 		userResponse = br.readLine();
 	}
 
 	private void saySomethingBack()
 	{
-		if (userResponse.contains("how are you"))
+		boolean iDontUnderstand = true; 
+		if(userResponse.contains("hi"))
+		{
+			System.out.println("hi");
+			iDontUnderstand = false;
+		}
+		
+		if(userResponse.contains("how are you"))
 		{
 			System.out.println("I am good how bout you");
+			iDontUnderstand = false;
+		} 
+		
+		if(userResponse.contains("I am good thank you"))
+		{
+			System.out.println("m hm");
+			iDontUnderstand = false;
 		}
 		
-		if(userResponse.contains("school sucks"))
+		if(userResponse.contains("doesn't school suck"))
 		{
 			System.out.println("i know right");
+			iDontUnderstand = false;
 		}
 		
+		if(!iDontUnderstand)
+		{
+			System.out.println("I'm sorry I don't understand");
+		}
 	}
 }
